@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+        <style>
+            
+            body
+            {   margin: 0%;
+                padding: 0%;
+                position: fixed;
+                background-image: url('bg1.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            #cnt2
+            {
+                font-family: 'Zhi Mang Xing', cursive;
+                color: white;
+                float: left;
+                font-size: 70px;
+                margin-top: 20px;
+                margin-left: 5px;
+            }
+            #cnt3
+            {   position: fixed;
+                right: 1%;
+                top: 10px;
+            }
+            .bt1
+            {
+                background-color: dodgerblue;
+                color: white;
+                padding: 10px 10px;
+            }
+            .bt2
+            {
+                background-color: dodgerblue;
+                color: white;
+                padding: 10px 10px;
+            }
+            #bt3
+            {
+                background-color: rgb(37, 255, 121);
+                color: white;
+                padding: 10px 10px;
+            }
+            /* MODAL***********************MODAL********** */
+            .modal {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(1.1);
+        transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    }
+   
+    .modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 1rem 1.5rem;
+        width: 24rem;
+        border-radius: 0.5rem;
+    }
+    
+    .close-button {
+        float: right;
+        width: 1.5rem;
+        line-height: 1.5rem;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 0.25rem;
+        background-color: lightgray;
+    }
+    
+    
+    .close-button:hover {
+        background-color: darkgray;
+    }
+   
+    .show-modal {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1.0);
+        transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+    }
+    input{
+        border: .5px solid black;
+        border-radius: 20px;
+        width: 90%;
+        padding: 12px 20px;
+    }
+    .modal1 {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(1.1);
+        transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    }
+    .modal-content1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 1rem 1.5rem;
+        width: 24rem;
+        border-radius: 0.5rem;
+    }
+    .close-button1{
+        float: right;
+        width: 1.5rem;
+        line-height: 1.5rem;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 0.25rem;
+        background-color: lightgray;
+    }
+    .close-button1:hover {
+        background-color: darkgray;
+    }
+    .show-modal {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1.0);
+        transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+    }
+    @media only screen and (min-width:768px{
+            #cnt1
+            {
+                right: 50%;
+                width: 100%;
+            }
+    }
+        </style>
+    </head>
+    <body>
+        <div id="cnt1">
+            <div id="cnt2">TravelXP</div>
+            <div id="cnt3">
+                <button class="bt1">Log In</button>
+                <button class="bt2">Sign Up</button>
+            </div>
+        </div>
+        <div class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <form id="f1">
+                        <h1>Login</h1>
+                        <input type="email" placeholder="Enter your Email"><br><br>
+                        <input type="password" placeholder="Enter your password">
+                        <br><br>
+                        <button class="bt3">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div class="modal1">
+                    <div class="modal-content1">
+                        <span class="close-button1">&times;</span>
+                        <form id="f1">
+                            <h1>Signup</h1>
+                            <input type="email" placeholder="Enter your Email"><br><br>
+                            <input type="password" id="pw1" placeholder="Enter your password">
+                            <br><br>
+                            <input type="password" id="pw2" placeholder="Confirm your password">
+                            <br><br>
+                            <button id="bt4">Submit</button>
+                            </form>
+                    </div>
+                </div>
+            
+        <script>
+                var modal = document.querySelector(".modal");
+    var trigger = document.querySelector(".bt1");
+    var closeButton = document.querySelector(".close-button");
+
+    function toggleModal() {
+        modal.classList.toggle("show-modal");
+    }
+
+    function windowOnClick(event) {
+        if (event.target === modal) {
+            toggleModal();
+        }
+    }
+
+    trigger.addEventListener("click", toggleModal);
+    closeButton.addEventListener("click", toggleModal);
+    window.addEventListener("click", windowOnClick);
+    var btn=document.getElementsByClassName("bt3").onclick=function(){
+        alert("Login Sucessful");
+    }
+
+    var modal1 = document.querySelector(".modal1");
+    var trigger1 = document.querySelector(".bt2");
+    var closeButton1 = document.querySelector(".close-button1");
+
+    function toggleModal1() {
+        modal1.classList.toggle("show-modal");
+    }
+
+    function windowOnClick1(event1) {
+        if (event1.target === modal1) {
+            toggleModal1();
+        }
+    }
+    
+    trigger1.addEventListener("click", toggleModal1);
+    closeButton1.addEventListener("click", toggleModal1);
+    window.addEventListener("click", windowOnClick1);
+    var btn1=document.getElementById("bt4").onclick=function(){
+        var p1=document.getElementById("pw1").value;
+        var p2=document.getElementById("pw2").value;
+        if(p1!=p2)
+        {
+            alert('Password do not match');
+        }
+        else
+        {
+            alert('Login Successful');
+        }
+
+    }
+
+        </script>
+    </body>
+</html>
